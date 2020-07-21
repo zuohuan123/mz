@@ -1,0 +1,10 @@
+insert into ldcode (CODETYPE, CODE, CODENAME, CODEALIAS, COMCODE, OTHERSIGN)
+values ('certifyChannel', 'SC', '非远程购物车', null, null, null);
+insert into ldcode (CODETYPE, CODE, CODENAME, CODEALIAS, COMCODE, OTHERSIGN)
+values ('certifyChannel', 'RS', '远程购物车', null, null, null);
+insert into ldcode (CODETYPE, CODE, CODENAME, CODEALIAS, COMCODE, OTHERSIGN)
+values ('certifyChannel', 'MZ', '手机银行', null, null, null);
+insert into ldcode (CODETYPE, CODE, CODENAME, CODEALIAS, COMCODE, OTHERSIGN)
+values ('certifyChannel', 'BH ', '分行模式', null, null, null);
+insert into ldcode (CODETYPE, CODE, CODENAME, CODEALIAS, COMCODE, OTHERSIGN)
+values ('certifyChannel', 'DG', 'Digital Ins', null, null, null);
