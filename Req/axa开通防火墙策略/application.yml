@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: zuul-gateway
+server:
+  port: 15388
+zuul:
+  retryable: false
+  routes:
+    traditional-url:                             #传统的路由配置,此名称可以自定义
+      path: /AXA/**                           #映射的url
+      url: https://uats.axa.cn/              #被映射的url
+management:
+  security:
+    enabled: false
+ribbon:
+  ConnectTimeout: 500
+  ReadTimeout: 20000
+
