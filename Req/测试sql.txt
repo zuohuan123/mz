@@ -1,0 +1,12 @@
+select l.*,lc.managecom,lc.operator,lc.riskcode,lc.contno as lccontno,lc.commonchannel,lc.esignflag,
+    ( select concat(concat(ld.description,':'),ld.cndescription)  from  
+     (SELECT t.rcode,t.proposalprtno, ROW_NUMBER() OVER(PARTITION BY t.proposalprtno ORDER BY t.modifydate DESC,t.modifytime desc) RN
+      FROM tranlog t where t.funcflag='debit' )  tr   
+      left join  ldhubflag  ld on  ld.brccode= tr.rcode where  tr.proposalprtno=l.contno and tr.rn=1) description 
+      from lcnotconclusion l
+     left join lccont lc on l.contno=lc.proposalcontno
+     where 1=1
+      and (lc.managecom in (select us.companycode from lduser us where us.emplid = 'ybt' )
+       or
+       EXISTS (select 'X' from reportauthorization r where r.BRANCHCODE = lc.managecom and r.STAFFID ='ybt' )
+      )
