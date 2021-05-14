@@ -1,1 +1,0 @@
-nohup java -jar /app/appoval/zuul-1.0-SNAPSHOT.jar --spring.config.location=/home/application.yml  > /app/appoval/zuul.log 2>&1 &
